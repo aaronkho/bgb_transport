@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bgb_transport"
+version = "0.0.1"
+description = "Bohm/gyro-Bohm anomalous plasma transport model"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+keywords = ["plasma", "reduced model", "transport", "tokamak", "fusion"]
+authors = [
+  {name = "Aaron Ho", email = "aaronkho@mit.edu" }
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Scientific/Engineering",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+dependencies = [
+  "numpy",
+  "scipy",
+  "pandas",
+  "tables"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "coverage"]
+
+[project.urls]
+"Homepage" = "https://github.com/aaronkho/bgb_transport"
+"Bug Reports" = "https://github.com/aaronkho/bgb_transport/issues"
+"Source" = "https://github.com/aaronkho/bgb_transport"
+
+[project.scripts]
+launch_bgb = "bgb_transport.model:main"
