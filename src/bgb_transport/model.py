@@ -73,7 +73,7 @@ def compute_normalized_chii_gyrobohm(inp):
     return chii_gyrobohm_norm
 
 
-def bgb_model(inp):
+def predict(inp):
     '''
     Mixed 97 Bohm/gyro-Bohm (BgB) model
     Taken from M. Erba et al., Nuclear Fusion 38 (1998)
@@ -161,7 +161,7 @@ def main():
         ikey = args.ikey if args.ikey is not None else '/data'
         okey = args.okey if args.okey is not None else '/data'
         inp = pd.read_hdf(ipath, key=ikey)
-        outp = bgb_model(inp)
+        outp = predict(inp)
         outp.to_hdf(opath, key=okey)
     print('Script completed!')
 
