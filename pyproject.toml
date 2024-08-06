@@ -41,3 +41,8 @@ dev = ["pytest", "coverage"]
 
 [project.scripts]
 launch_bgb = "bgb_transport.model:main"
+
+[tool.pytest.ini_options]
+markers = [
+    "bgb"
+]
